@@ -104,28 +104,24 @@ export function Header() {
         </div>
       </header>
 
-      {isDivOpen && <div className='bg-[#f6faf3] border-b border-[#a2aa9c] h-32 z-10 text-[#23331b] px-8' onMouseEnter={() => {
-        setIsDivOpen(true);
+      {isDivOpen && (
+        <div className='bg-[#f6faf3] border-b border-[#a2aa9c] h-32 z-10 text-[#23331b] px-8 flex flex-col  justify-center'
+          onMouseEnter={() => setIsDivOpen(true)}
+          onMouseLeave={() => setIsDivOpen(false)}>
+          <p className='font-medium'>South West</p>
+          <ul>
+            <li>
+              <NavLink
+                to="/community/"
+                className="py-2 border-b-2 border-transparent hover:border-[#23331b]">
+                cadence
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      )}
 
-      }} onMouseLeave={() => {
-        setIsDivOpen(false);
 
-      }}>
-
-        <p>South West</p>
-
-        <ul>
-
-          <li>
-            <NavLink
-
-              to="/coummity/"
-              className="hover: border-b-2 py-2 border-[#23331b]">
-              cadence
-            </NavLink>
-          </li>
-        </ul>
-      </div>}
     </>
   );
 }
