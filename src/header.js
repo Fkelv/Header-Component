@@ -84,13 +84,13 @@ export function Header() {
       </div>
       <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
         <nav>
-          <ul className="px-2 pt-2 pb-3 space-y-1 bg-[#23331b]">
+          <ul className="px-2 pt-2 pb-3 space-y-1 bg-[#23331b] text-[#e6f3c5] h-screen ">
             <li>
               <NavLink
                 exact
                 to="/"
                 activeClassName="text-[#23331b]"
-                className="text-[#23331b] hover:text-[#23331b] block px-3 py-2 rounded-md text-base font-medium"
+                className="  block px-3 py-2 rounded-md text-base font-medium"
               >
                 Our Communities
 
@@ -101,7 +101,7 @@ export function Header() {
                 exact
                 to="/about"
                 activeClassName="text-[#23331b]"
-                className="text-[#23331b] hover:text-[#23331b] block px-3 py-2 rounded-md text-base font-medium"
+                className="block px-3 py-2 rounded-md text-base font-medium"
               >
                 Who We Are
 
@@ -113,7 +113,7 @@ export function Header() {
                 exact
                 to="/about"
                 activeClassName="text-[#23331b]"
-                className="text-[#23331b] hover:text-[#23331b] block px-3 py-2 rounded-md text-base font-medium"
+                className=" block px-3 py-2 rounded-md text-base font-medium"
               >
                 Contact Us
 
