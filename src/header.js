@@ -8,6 +8,15 @@ export function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const menuItems = [
+    { to: "/communities", title: "Our Communities" },
+    {
+      to: "/about", title: "Who We Are"
+    },
+    {
+      to: "/ContactUs", title: "Contact Us"
+    },
+  ]
   return (
     <header className="bg-[#f6faf3] border-b border-[#a2aa9c]">
       <div className="container mx-auto flex items-center justify-between h-16 ">
@@ -16,59 +25,26 @@ export function Header() {
         </div>
         <nav className="hidden md:flex space-x-4">
           <ul className="flex space-x-4">
-            <li>
-              <NavLink
-                exact
-<<<<<<< HEAD
-                to="/communities"
-                activeClassName=" text-blue-800"
-                className="text-[#23331b] hover:text-[#23331b] px-3 py-2  text-base font-medium py-5 border-b-4 border-[#23331b]"
-              >
-                <span className='p-2 rounded-[5px] transition-colors duration-200 hover:bg-[#e6f3c5] active:bg-[#e6f3c5] &.active:bg-[#e6f3c5]'
-
+            {menuItems.map((item) => (
+              <li key={item.title}>
+                <NavLink
+                  exact
+                  to={item.to}
+                  className={({ isActive }) =>
+                    isActive
+                      ? "border-b-4 py-5 border-[#23331b]"
+                      : "text-[#23331b] hover:text-[#23331b] px-3 py-2 rounded-md text-sm font-medium"
+                  }
                 >
-                  Our Communities
-                </span>
-=======
-                to="/"
-                activeClassName="text-[#23331b] border-b-2 border-yellow-600"
-                className="text-[#23331b] hover:text-[#23331b] px-3 py-2 rounded-md text-sm font-medium"
-              >
-                <span className='p-4 bg-blue-800'>Our Communities</span>
->>>>>>> b553679853ff21c1cd4ae0df0b47985f4f31df13
-              </NavLink>
+                  <span className="p-3 rounded-[5px] transition-colors duration-200 hover:bg-[#e6f3c5] active:bg-[#e6f3c5] &.active:bg-[#e6f3c5]">
+                    {item.title}
+                  </span>
+                </NavLink>
+              </li>
+            ))}
 
-            </li>
-            <li>
-              <NavLink
-                exact
-                to="/about"
-                activeClassName="py-5 border-b-4 border-[#23331b]"
-                className="text-[#23331b] hover:text-[#23331b] px-3 py-2 rounded-md text-base font-medium"
-              >
 
-                <span className='p-2 rounded-[5px] transition-colors duration-200 hover:bg-[#e6f3c5] active:bg-[#e6f3c5] &.active:bg-[#e6f3c5]'
 
-                >
-                  Who We Are
-                </span>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                exact
-                to="/contact"
-                activeClassName=" py-5 border-b-4 border-[#23331b]"
-                className="text-[#23331b] hover:text-[#23331b] px-3   text-base font-medium "
-              >
-
-                <span className='p-2 rounded-[5px] transition-colors duration-200 hover:bg-[#e6f3c5] active:bg-[#e6f3c5] &.active:bg-[#e6f3c5]'
-
-                >
-                  Contact Us
-                </span>
-              </NavLink>
-            </li>
           </ul>
         </nav>
         <div className="md:hidden flex items-center px-2 ">
@@ -93,40 +69,22 @@ export function Header() {
       <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
         <nav>
           <ul className="px-2 pt-2 pb-3 space-y-1 bg-[#23331b] text-[#e6f3c5] h-screen ">
-            <li>
-              <NavLink
-                exact
-                to="/"
-                activeClassName="text-[#23331b]"
-                className="  block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Our Communities
 
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                exact
-                to="/about"
-                activeClassName="text-[#23331b]"
-                className="block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Who We Are
 
-              </NavLink>
-            </li>
 
-            <li>
-              <NavLink
-                exact
-                to="/about"
-                activeClassName="text-[#23331b]"
-                className=" block px-3 py-2 rounded-md text-base font-medium"
-              >
-                Contact Us
 
-              </NavLink>
-            </li>
+            {menuItems.map((item) => (
+              <li key={item.title}>
+                <NavLink
+                  exact
+                  to={item.to}
+                  className=" block px-3 py-2 rounded-md text-base font-medium"
+
+                >
+                  {item.title}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
