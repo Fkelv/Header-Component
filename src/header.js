@@ -9,71 +9,82 @@ export function Header() {
   };
 
   return (
-    <header className="bg-[#f6faf3]">
-      <div className="container mx-auto flex items-center justify-between h-16">
+    <header className="bg-[#f6faf3] border-b border-[#a2aa9c]">
+      <div className="container mx-auto flex items-center justify-between h-16 ">
         <div className="flex-shrink-0">
-          <h1 className="text-[#23331b] text-xl font-bold">Logo</h1>
+          <h1 className="text-[#23331b] text-2xl font-bold">Logo</h1>
         </div>
         <nav className="hidden md:flex space-x-4">
           <ul className="flex space-x-4">
             <li>
               <NavLink
                 exact
-                to="/"
-                activeClassName="text-[#23331b]"
-                className="text-[#23331b] hover:text-[#23331b] px-3 py-2 rounded-md text-sm font-medium"
+                to="/communities"
+                activeClassName=" text-blue-800"
+                className="text-[#23331b] hover:text-[#23331b] px-3 py-2  text-base font-medium py-5 border-b-4 border-[#23331b]"
               >
-                Our Communities
+                <span className='p-2 rounded-[5px] transition-colors duration-200 hover:bg-[#e6f3c5] active:bg-[#e6f3c5] &.active:bg-[#e6f3c5]'
+
+                >
+                  Our Communities
+                </span>
               </NavLink>
+
             </li>
             <li>
               <NavLink
                 exact
                 to="/about"
-                activeClassName="text-[#23331b]"
-                className="text-[#23331b] hover:text-[#23331b] px-3 py-2 rounded-md text-sm font-medium"
+                activeClassName="py-5 border-b-4 border-[#23331b]"
+                className="text-[#23331b] hover:text-[#23331b] px-3 py-2 rounded-md text-base font-medium"
               >
-                Who We Are
+
+                <span className='p-2 rounded-[5px] transition-colors duration-200 hover:bg-[#e6f3c5] active:bg-[#e6f3c5] &.active:bg-[#e6f3c5]'
+
+                >
+                  Who We Are
+                </span>
               </NavLink>
             </li>
             <li>
               <NavLink
                 exact
                 to="/contact"
-                activeClassName="text-[#23331b]"
-                className="text-[#23331b] hover:text-[#23331b] px-3 py-2 rounded-md text-sm font-medium"
+                activeClassName=" py-5 border-b-4 border-[#23331b]"
+                className="text-[#23331b] hover:text-[#23331b] px-3   text-base font-medium "
               >
-                Contact Us
+
+                <span className='p-2 rounded-[5px] transition-colors duration-200 hover:bg-[#e6f3c5] active:bg-[#e6f3c5] &.active:bg-[#e6f3c5]'
+
+                >
+                  Contact Us
+                </span>
               </NavLink>
             </li>
           </ul>
         </nav>
-        <div className="md:hidden flex items-center">
-          <button onClick={toggleMenu} className="text-[#23331b] hover:text-[#23331b] focus:outline-none">
-            <svg
-              className="h-6 w-6 fill-current"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                className={isMenuOpen ? 'hidden' : 'block'}
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"
-              />
-              <path
-                className={isMenuOpen ? 'block' : 'hidden'}
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M2.75 5.75h18.5v2H2.75v-2zm0 5h18.5v2H2.75v-2zm0 5h18.5v2H2.75v-2z"
-              />
-            </svg>
+        <div className="md:hidden flex items-center px-2 ">
+          <button onClick={toggleMenu} className="text-black hover:text-black focus:outline-none">
+            {isMenuOpen ? (
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+              </svg>
+            )}
           </button>
         </div>
+
+
+
+
       </div>
       <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
         <nav>
-          <ul className="px-2 pt-2 pb-3 space-y-1">
+          <ul className="px-2 pt-2 pb-3 space-y-1 bg-[#23331b]">
             <li>
               <NavLink
                 exact
