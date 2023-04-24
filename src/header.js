@@ -5,7 +5,6 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDivOpen, setIsDivOpen] = useState(false);
 
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -48,8 +47,6 @@ export function Header() {
                         setIsDivOpen(false);
                       }
                     }}
-
-
                   >
                     <span className="p-3 rounded-[5px] transition-colors duration-200 hover:bg-[#e6f3c5] active:bg-[#e6f3c5] &.active:bg-[#e6f3c5]">
                       {item.title}
@@ -57,9 +54,6 @@ export function Header() {
                   </NavLink>
                 </li>
               ))}
-
-
-
             </ul>
           </nav>
           <div className="md:hidden flex items-center px-2 ">
@@ -76,18 +70,10 @@ export function Header() {
               )}
             </button>
           </div>
-
-
-
-
         </div>
         <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden`}>
           <nav>
             <ul className="px-2 pt-2 pb-3 space-y-1 bg-[#23331b] text-[#e6f3c5] h-screen ">
-
-
-
-
               {menuItems.map((item) => (
                 <li key={item.title}>
                   <NavLink
@@ -103,12 +89,11 @@ export function Header() {
           </nav>
         </div>
       </header>
-
       {isDivOpen && (
         <div className='bg-[#f6faf3] border-b border-[#a2aa9c] h-32 z-10 text-[#23331b] px-8 flex flex-col  justify-center'
           onMouseEnter={() => setIsDivOpen(true)}
           onMouseLeave={() => setIsDivOpen(false)}>
-          <p className='font-medium'>South West</p>
+          <p className='font-medium mb-2'>South West</p>
           <ul>
             <li>
               <NavLink
@@ -120,8 +105,6 @@ export function Header() {
           </ul>
         </div>
       )}
-
-
     </>
   );
 }
