@@ -20,10 +20,10 @@ export function Header() {
               <NavLink
                 exact
                 to="/"
-                activeClassName="text-[#23331b]"
+                activeClassName="text-[#23331b] border-b-2 border-yellow-600"
                 className="text-[#23331b] hover:text-[#23331b] px-3 py-2 rounded-md text-sm font-medium"
               >
-                Our Communities
+                <span className='p-4 bg-blue-800'>Our Communities</span>
               </NavLink>
             </li>
             <li>
